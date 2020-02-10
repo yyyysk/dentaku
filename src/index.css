@@ -26,6 +26,7 @@ h1 {
   font-size: 2rem;
   text-align: right;
   color: white;
+  height: 60px;
 }
 
 .app__row {

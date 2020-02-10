@@ -1,8 +1,9 @@
-import { INPUT_NUMBER } from '../actionTypes';
+import { INPUT_NUMBER, INPUT_OPERATOR } from '../actionTypes';
 
 const initialState = {
   numbers: [],
-  number: '' 
+  number: '' ,
+  operators: []
 }
 
 export default function numbers(state = initialState, action) {
@@ -11,6 +12,13 @@ export default function numbers(state = initialState, action) {
       return {
         ...state,
         number: action.number
+      };
+
+    case INPUT_OPERATOR:
+      return {
+        ...state,
+        numbers: state.numbers.concat(new Array(state.number)),
+        operators: state.operators.concat(new Array(action.operator))
       };
 
     default:

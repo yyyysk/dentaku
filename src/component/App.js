@@ -1,10 +1,14 @@
 import React from 'react';
 
-const App = ({number, inputNumber}) => {
+const App = ({number, inputNumber, inputOperator}) => {
 
   const onNumberClick = num => {
     inputNumber(number + '' + num);
-  }
+  };
+
+  const onOperatorClick = operator => {
+    inputOperator(operator);
+  };
 
   return(
     <div>
@@ -15,25 +19,25 @@ const App = ({number, inputNumber}) => {
           <div className="app__row__item app__row__item--dark">C</div>
           <div className="app__row__item app__row__item--dark">+/-</div>
           <div className="app__row__item app__row__item--dark">%</div>
-          <div className="app__row__item app__row__item--accent">÷</div>
+          <div className="app__row__item app__row__item--accent" onClick={() => onOperatorClick('/')}>÷</div>
         </div>
         <div className="app__row">
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(7)}>7</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(8)}>8</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(9)}>9</div>
-          <div className="app__row__item app__row__item--accent">×</div>
+          <div className="app__row__item app__row__item--accent" onClick={() => onOperatorClick('*')}>×</div>
         </div>
         <div className="app__row">
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(4)}>4</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(5)}>5</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(6)}>6</div>
-          <div className="app__row__item app__row__item--accent">-</div>
+          <div className="app__row__item app__row__item--accent" onClick={() => onOperatorClick('-')}>-</div>
         </div>
         <div className="app__row">
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(1)}>1</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(2)}>2</div>
           <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(3)}>3</div>
-          <div className="app__row__item app__row__item--accent">+</div>
+          <div className="app__row__item app__row__item--accent" onClick={() => onOperatorClick('+')}>+</div>
         </div>
         <div className="app__row">
           <div className="app__row__item app__row__item--dark app__row__item--twice" onClick={() => onNumberClick(0)}>0</div>
