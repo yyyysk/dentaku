@@ -1,11 +1,11 @@
 import { INPUT_NUMBER } from '../actionTypes';
 
 const initialState = {
-  number: 0
+  number: '' 
 }
 
 export default function numbers(state = initialState, action) {
-  switch(type.action) {
+  switch(action.type) {
     case INPUT_NUMBER:
       return {
         ...state,

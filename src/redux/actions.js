@@ -1,4 +1,4 @@
-import { INPUT_NUMBER } from 'actionTypes.js';
+import { INPUT_NUMBER } from './actionTypes.js';
 
 export const inputNumber = (number) => {
 

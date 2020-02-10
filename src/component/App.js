@@ -1,12 +1,16 @@
 import React from 'react';
 
-const App = () => {
-  
+const App = ({number, inputNumber}) => {
+
+  const onNumberClick = num => {
+    inputNumber(number + '' + num);
+  }
+
   return(
     <div>
       <h1>DENTAKU APP</h1>
       <div className="app">
-        <div className="app__result">0</div>
+        <div className="app__result">{ number }</div>
         <div className="app__row">
           <div className="app__row__item app__row__item--dark">C</div>
           <div className="app__row__item app__row__item--dark">+/-</div>
@@ -14,25 +18,25 @@ const App = () => {
           <div className="app__row__item app__row__item--accent">÷</div>
         </div>
         <div className="app__row">
-          <div className="app__row__item app__row__item--dark">7</div>
-          <div className="app__row__item app__row__item--dark">8</div>
-          <div className="app__row__item app__row__item--dark">9</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(7)}>7</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(8)}>8</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(9)}>9</div>
           <div className="app__row__item app__row__item--accent">×</div>
         </div>
         <div className="app__row">
-          <div className="app__row__item app__row__item--dark">4</div>
-          <div className="app__row__item app__row__item--dark">5</div>
-          <div className="app__row__item app__row__item--dark">6</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(4)}>4</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(5)}>5</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(6)}>6</div>
           <div className="app__row__item app__row__item--accent">-</div>
         </div>
         <div className="app__row">
-          <div className="app__row__item app__row__item--dark">1</div>
-          <div className="app__row__item app__row__item--dark">2</div>
-          <div className="app__row__item app__row__item--dark">3</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(1)}>1</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(2)}>2</div>
+          <div className="app__row__item app__row__item--dark" onClick={() => onNumberClick(3)}>3</div>
           <div className="app__row__item app__row__item--accent">+</div>
         </div>
         <div className="app__row">
-          <div className="app__row__item app__row__item--dark app__row__item--twice">0</div>
+          <div className="app__row__item app__row__item--dark app__row__item--twice" onClick={() => onNumberClick(0)}>0</div>
           <div className="app__row__item app__row__item--dark">.</div>
           <div className="app__row__item app__row__item--accent">=</div>
         </div>
