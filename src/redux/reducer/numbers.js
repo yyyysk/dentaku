@@ -1,6 +1,7 @@
 import { INPUT_NUMBER } from '../actionTypes';
 
 const initialState = {
+  numbers: [],
   number: '' 
 }
 
