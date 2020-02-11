@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import App from '../component/App';
-import { inputNumber, inputOperator } from '../redux/actions';
+import { inputNumber, inputOperator, calculate, allClear } from '../redux/actions';
 
 const mapStateToProps = (state) => {
 
   return {
     number: state.numbers.number,
+    numbers: state.numbers.numbers,
     operators: state.numbers.operators
   }
 };
@@ -18,6 +19,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     inputOperator(operator) {
       dispatch(inputOperator(operator));
+    },
+    calculate(result) {
+      dispatch(calculate(result));
+    },
+    allClear() {
+      dispatch(allClear());
     }
   }
 };

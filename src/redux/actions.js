@@ -1,4 +1,4 @@
-import { INPUT_NUMBER, INPUT_OPERATOR } from './actionTypes.js';
+import { INPUT_NUMBER, INPUT_OPERATOR, CALCULATE, ALL_CLEAR } from './actionTypes.js';
 
 export const inputNumber = (number) => {
 
@@ -14,5 +14,20 @@ export const inputOperator = (operator) => {
     type: INPUT_OPERATOR,
     operator
   }
+};
+
+export const calculate = (result) => {
+
+  return {
+    type: CALCULATE,
+    result
+  };
+};
+
+export const allClear = () => {
+
+  return {
+    type: ALL_CLEAR
+  };
 };
 
